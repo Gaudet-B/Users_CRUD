@@ -39,6 +39,17 @@ def edit_user(user_id):
     user = User.show_user(data)
     return render_template('edit.html', user_id = user_id, user = user)
 
+@app.route("/users/<int:user_id>/update", methods=["POST"])
+def update(user_id):
+    data = {
+        "id": user_id,
+        "first_name": request.form['first_name'],
+        "last_name": request.form['last_name'],
+        "email": request.form['email'],
+    }
+    user = User.update(data)
+    return redirect(f"/users/{user_id}")
+
 @app.route("/users/<int:user_id>/delete")
 def delete_user(user_id):
     data = {

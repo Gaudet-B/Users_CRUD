@@ -12,7 +12,7 @@
         <h1>Edit User {{ user_id }}</h1>
         <a href="/">Home</a>
     </div>
-    <form action="/add_user" class="d-flex flex-column" style="width: 350px;" method="POST">
+    <form action="/users/{{user_id}}/update" class="d-flex flex-column" style="width: 350px;" method="POST">
         <label for="first_name" class="form-label">First Name:</label>
         <input type="text" id="first_name" name="first_name" value="{{ user[0]['first_name'] }}">
         <label for="last_name" class="form-label">Last Name:</label>
