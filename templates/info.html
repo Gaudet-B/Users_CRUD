@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <title>Read (One)</title>
+</head>
+<body style="width: 60%; margin: auto; padding: 20px;">
+    <div class="d-flex flex-row justify-content-between" style="padding-right: 20px;">
+        <h1 style="margin-left: 20px;">User {{ user[0]['id'] }}</h1>
+        <a href="/">Home</a>
+    </div>
+    <div class="container d-flex flex-column" style="border: 5px solid black; border-radius: 20px; padding: 20px;">
+        <div>
+            <h3>Full Name: {{ user[0]['first_name'] + " " + user[0]['last_name'] }} </h3>
+        </div>
+        <br>
+        <div>
+            <h3>Email: {{ user[0]['email'] }} </h3>
+        </div>
+        <br>
+        <div>
+            <h3>Created On: {{ user[0]['created_at'] }} </h3>
+        </div>
+        <br>
+        <div>
+            <h3>Last Updated On: {{ user[0]['updated_at']}} </h3>
+        </div>
+    </div>
+    <div class="d-flex flex-row justify-content-around" style="width: 150px; margin-top: 60px; padding-left: 10px;">
+        <a href="/users/{{ user[0]['id'] }}/edit">Edit</a>  |  <a href="/users/{{ user[0]['id'] }}/delete">Delete</a>
+    </div>
+</body>
+</html>
